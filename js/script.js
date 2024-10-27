@@ -1,10 +1,27 @@
+const todoapp = document.querySelector(".todoapp");
 const new_todo = document.querySelector(".new-todo");
 const todoList = document.querySelector(".todo-list");
 const checkbox = document.querySelectorAll(".toggle");
 const filters = document.querySelector(".filters");
 const completed_filter = filters.lastChild;
 const toggleAll = document.querySelector(".toggle-all");
-console.log();
+console.log(todoapp);
+console.log(todoapp.classList);
+console.log([...todoapp.classList].includes('todoapp1'));
+console.log([...todoapp.classList].includes('todoapp3'));
+
+// todoapp.addEventListener('click', function(event) {
+//   const target = event.target;
+//   const classList = [...target.classList];
+
+//   if (classList.includes('destroy')) {
+//     event.target.parentNode.parentNode.remove();
+//   }
+
+//   if (classList.includes('toggle')) {
+//     console.log('toggle');
+//   }
+// });
 
 function ToDoCreat() {
   if (!new_todo.value.trim()) {
@@ -35,8 +52,12 @@ function delLi() {
 function check() {
   const $checkBox = document.querySelectorAll(".toggle");
   $checkBox.forEach(toggleInput => {
-    toggleInput.addEventListener('click', () => {
-      toggleInput.parentNode.parentNode.classList.toggle('completed');
+    
+    toggleInput.addEventListener('click', (event) => {
+      // console.log(event);
+      // console.log(event.target);
+
+      // toggleInput.parentNode.parentNode.classList.toggle('completed');
     })
   })
 }
@@ -48,21 +69,21 @@ new_todo.addEventListener('keypress', (e) => {
   if (e.keyCode == 13) {
     ToDoCreat();
     delLi();
-    check();
+    // check();
     console.log(e);
   }
-})
+});
 
-toggle_all.addEventListener('click' , () =>{
-  document.querySelectorAll(".toggle").forEach(toggle => {
-    toggle.
-  });
-  
+check();
 
-})
+// toggle_all.addEventListener('click' , () =>{
+//   document.querySelectorAll(".toggle").forEach(toggle => {
+//     // toggle.
+//   });
+// })
 
 
-console.log(toggle_all);
+// console.lo`g(toggle_all);
 
 // window.addEventListener('hashchange',()=>{
 //   Array.from(filters.children).forEach(filterItem => {
